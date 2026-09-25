@@ -27,5 +27,11 @@ public class OrderController {
 		List<String> order = Arrays.asList("order=101", "order=102", "order=103");
 		return ResponseEntity.status(HttpStatus.CREATED).body(order);
 	}
+	
+	@GetMapping("/all-orders")
+	public ResponseEntity<List<String>> createOrderList1() {
+		List<String> order = Arrays.asList("order=101", "order=102", "order=103","order=104", "order=105", "order=106");
+		return ResponseEntity.status(HttpStatus.CREATED).body(order);
+	}
 
 }
