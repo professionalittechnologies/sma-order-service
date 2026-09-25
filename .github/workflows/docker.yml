@@ -44,11 +44,11 @@ jobs:
       - name: Build Docker image
         run: |
           docker build \
-            -t ${{ secrets.DOCKER_USERNAME }}/sma-order-service . 
+            -t ${{ secrets.DOCKER_USERNAME }}/sma-order-service:latest . 
             .
 
       # 7. Push Docker image to Docker Hub
       - name: Push Docker image
         run: |
           docker push \
-            ${{ secrets.DOCKER_USERNAME }}/sma-order-service 
+            ${{ secrets.DOCKER_USERNAME }}/sma-order-service:latest 
