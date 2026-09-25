@@ -1,1 +1,20 @@
+sudo apt-get update
+sudo apt-get install openjdk-17-jdk
+
 sudo apt install maven -y
+ java -version
+ git clone https://github.com/professionalittechnologies/sma-order-service.git
+ sudo apt install maven -y
+ mvn clean package
+ java -jar smp-order-service-0.0.1-SNAPSHOT.jar
+ cd sma-order-service
+ docker build -t stock:v1 .
+ docker run --name order-stock -d -p 8085:8081 stock:v1
+ 
+ create repository on dockerhub/aws /gcp 
+ docker login
+ docker tag stock:v1 manish28/sma-order-service
+ docker push manish28/sma-order-service
+ 
+ 
+ 
