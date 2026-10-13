@@ -23,6 +23,14 @@ sudo apt install maven -y
  kubectl expose pod sma-order --port=8081
  kubectl expose pod sma-order --name=sma-order-service --port=8085 --target-port=8081 --type=NodePort
  
+ #Create Deployment
+ kubectl create deployment sma-order \
+  --image=manish28/sma-order-service
+  kubectl get deployment
+kubectl get replicaset
+kubectl get pods
+kubectl scale deployment sma-order --replicas=3
+ 
  
  
  
