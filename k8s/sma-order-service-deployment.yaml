@@ -1,11 +1,19 @@
-apiVersion: v1
-kind: Service
+apiVersion: apps/v1
+kind: Deployment
 metadata:
-  name: sma-order-service
+  name: sma-order
 spec:
-  type: NodePort
+  replicas: 3
   selector:
-    app: sma-order
-  ports:
-    - port: 8080
-      targetPort: 8081
+    matchLabels:
+      app: sma-order
+  template:
+    metadata:
+      labels:
+        app: sma-order
+    spec:
+      containers:
+        - name: sma-order
+          image: manish28/sma-order-service
+          ports:
+            - containerPort: 8080
